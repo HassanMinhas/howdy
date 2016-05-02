@@ -1,4 +1,4 @@
-﻿
+﻿@model List<Howdy.Models.Order>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Howdy - List</title>
@@ -356,106 +356,26 @@
 
                                             <th class="table-header-repeat line-left minwidth-1"><a href="">Order ID</a></th>
                                             <th class="table-header-repeat line-left minwidth-1"><a href="">Table ID</a></th>
-                                            <th class="table-header-repeat line-left"><a href="">Item(s)</a></th>
-                                            <th class="table-header-options line-left"><a href="">Status</a></th>
                                             <th class="table-header-options line-left"><a href="">Bill</a></th>
-                                            <th class="table-header-options line-left"><a href="">Discounted Price</a></th>
+                                            <th class="table-header-repeat line-left"><a href="">Item(s)</a></th>
+                                            
+                                            
                                         </tr>
                                         <tr>
 
-                                            <td>1111</td>
-                                            <td>01</td>
-                                            <td>
-                                                <table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">
-                                                    <tr>
-                                                        <th class="table-header-repeat line-left minwidth-1"><a href="">Product</a></th>
-                                                        <th class="table-header-repeat line-left minwidth-1"><a href="">Qty</a></th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Jelepeno</td>
-                                                        <td> 1</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Mint Drink</td>
-                                                        <td> 1</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Django Unchained</td>
-                                                        <td> 3</td>
-                                                    </tr>
+                                            @foreach (var s in Model)
+                                            {
+                                            <tr>
 
-
-                                                </table>
-
-
-                                            </td>
-                                            <td> Completed</td>
-                                            <td> PKR 2500 </td>
-                                            <td> 2200 </td>
-
-
-                                        </tr>
-                                    
-                
-                <tr>
-
-                    <td>1111</td>
-                    <td>01</td>
-                    <td>
-                        <table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">
-                            <tr>
-                                <th class="table-header-repeat line-left minwidth-1"><a href="">Product</a></th>
-                                <th class="table-header-repeat line-left minwidth-1"><a href="">Qty</a></th>
-                            </tr>
-
-                            <tr>
-                                <td>Django Unchained</td>
-                                <td> 1</td>
-                            </tr>
-                            <tr>
-                                <td>Lemonade</td>
-                                <td> 1</td>
-                            </tr>
-
-
-                        </table>
-
-
-                    </td>
-                    <td> Completed</td>
-                    <td> PKR 1500 </td>
-                    <td> 1200 </td>
-
-                </tr>
-           
-
-            <tr>
-
-                <td>1111</td>
-                <td>01</td>
-                <td>
-                    <table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">
-                        <tr>
-                            <th class="table-header-repeat line-left minwidth-1"><a href="">Product</a></th>
-                            <th class="table-header-repeat line-left minwidth-1"><a href="">Qty</a></th>
-                        </tr>
-
-                        <tr>
-                            <td>Fries</td>
-                            <td> 3</td>
-                        </tr>
-
-
-                    </table>
-
-
-                </td>
-                <td> Completed</td>
-                <td> PKR 1000 </td>
-                <td> 000 </td>
-
-            </tr>
-           
+                                                <td> @s.Order_id  </td>
+                                                <td>@s.Table_No</td>
+                                                <td>@s.Total_Bill</td>
+                                                <td class="options-width">
+                                                    <a href="/Home/CheckProduct/@s.Ordered_Product" title="Edit" class="icon-1 info-tooltip"></a>
+                                                </td>
+                                            </tr>
+                                            }
+                                        </tr>           
             </table>
             <!--  end product-table................................... -->
             </form>

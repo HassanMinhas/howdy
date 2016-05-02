@@ -1,4 +1,4 @@
-﻿@model List<Howdy.Models.Category>
+﻿@model List<Howdy.Models.Review>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -363,40 +363,21 @@
                                             <th class="table-header-repeat line-left minwidth-1"><a href="">Service</a></th>
                                             <th class="table-header-repeat line-left minwidth-1"><a href="">Experience</a></th>
                                             <th class="table-header-options line-left"><a href="">Suggestions</a></th>
-                                            <th class="table-header-options line-left"><a href="">Date/Time</a></th>
-
-                                        </tr>
-
-                                            <tr>
-                                                <td>shifa-e-Zainab</td>
-                                                <td>Good</td>
-                                                <td>Excellent</td>
-                                                <td>Average</td>
-                                                <td>Good</td>
-                                                <td>Had a pleasant time here.. Doing good Job</td>
-                                            </tr>
-                                            <tr class="alternate-row">
-
-                                                <tr>
-                                                    <td>shifa-e-Zainab</td>
-                                                    <td>Good</td>
-                                                    <td>Excellent</td>
-                                                    <td>Average</td>
-                                                    <td>Good</td>
-                                                    <td>Had a pleasant time here.. Doing good Job</td>
-                                                </tr>
-
-                                            </tr>
-                                         <tr>
-                                            <td>shifa-e-Zainab</td>
-                                            <td>Good</td>
-                                            <td>Excellent</td>
-                                            <td>Average</td>
-                                            <td>Good</td>
-                                            <td>Had a pleasant time here.. Doing good Job</td>
-                                        </tr>
                                             
 
+                                        </tr>
+                                        @foreach (var s in Model)
+                                        {
+                                            <tr>
+
+                                                <td>@s.Username </td>
+                                                <td>@s.Food</td>
+                                                <td>@s.Environment</td>
+                                                <td>@s.Service</td>
+                                                <td>@s.Experience</td>
+                                                <td>@s.Suggestions</td>
+                                            </tr>
+                                        }
                                     </table>
                                     <!--  end product-table................................... -->
                                 </form>
